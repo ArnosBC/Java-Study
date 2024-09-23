@@ -1,0 +1,76 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author ESTUDIANTE
+ */
+public class Cliente {
+    
+    private String nombre;
+    private String apellido;
+    private String id;
+    
+    private Cuenta cuenta;
+
+    public Cliente() {
+    }
+
+    public Cliente(String nombre, String apellido, String id, Cuenta cuenta) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.cuenta = cuenta;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
+    
+    public void retirarDeMiCuenta(double monto){
+        this.cuenta.retirar(monto);
+                
+    }
+    
+    public void imprimirSaldo(){
+        System.out.println("Saldo actual: " + cuenta.getSaldo());
+    }
+    
+    @Override
+    public String toString(){
+        return "Cliente(" + "nombre=" + nombre + "apellido=" + apellido + "Id=" + id + "Cuenta=" + cuenta;
+    }
+    
+    
+    
+}
