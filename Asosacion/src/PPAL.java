@@ -9,30 +9,21 @@ public class PPAL {
 
     
     public static void main(String[] args) {
-        Cuenta miCuenta = new Cuenta("CC01",100, 5000, LocalDate.now());
-        Cliente yo = new Cliente("Jairo", "Seoanes", "XXX", miCuenta);
         
-        System.out.println(yo);
+        Cliente cliente1 = new Cliente("Jairo", "Seones", "12345");
+        System.out.println(cliente1);
         
-        System.out.println("----------------------------------------");
+        ArrayList<Cuenta> cuentas = new ArrayList<>();
+        Cuenta cuenta1 = new Cuenta("CC01",100, 5000, LocalDate.now());
+        Cuenta cuenta2 = new Cuenta("CC01",200, 3000, LocalDate.now());
+
+        ClientePremium clientePremium = new ClientePremium("67890", "Ana", "García", cuentas);
+        System.out.println(clientePremium);
+
         
-        Cuenta nuevaCuenta = new Cuenta("CC01",0, 1000, LocalDate.now());
-        yo.setCuenta(nuevaCuenta);
-        yo.imprimirSaldo();
-        yo.getCuenta().consignar(2000);
-        yo.imprimirSaldo();
-        
-        
-        
-        
-        System.out.println(yo);
-        
-        
-        System.out.println("Cliente Premium: ");
+        /*System.out.println("Cliente Premium: ");
         ClientePremium premium = new ClientePremium("abc", "Lule", "Ardila", new ArrayList<>());
         System.out.println("No de cuentas registradas: " + premium.getMisCuentas());
-        premium.registrarCuenta(miCuenta);
-        premium.registrarCuenta(nuevaCuenta);
         System.out.println(premium);
         premium.imprimirNoCuentasRegistradas();
         
@@ -47,7 +38,7 @@ public class PPAL {
             premium.imprimirHistoricoCuenta(buscada); 
         } else {
             System.out.println("La cuenta no esta registrada");
-        }
+        }*/
         
     }
     

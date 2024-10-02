@@ -10,13 +10,7 @@ import java.util.ArrayList;
  *
  * @author ESTUDIANTE
  */
-public class ClientePremium {
-    
-    private String id;
-    private String nombre;
-    private String apellido;
-    
-    //Relacion de 1 a varios con cuenta
+public class ClientePremium extends Cliente {
     
     private ArrayList <Cuenta> misCuentas;
 
@@ -25,34 +19,8 @@ public class ClientePremium {
     }
 
     public ClientePremium(String id, String nombre, String apellido, ArrayList<Cuenta> miCuentas) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.misCuentas = miCuentas;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+        super(nombre, apellido, id);
+        this.misCuentas = new ArrayList<Cuenta>();
     }
 
     public ArrayList<Cuenta> getMisCuentas() {
@@ -65,11 +33,6 @@ public class ClientePremium {
    
     public void registrarCuenta(Cuenta c){
         this.misCuentas.add(c);
-    }
-    
-    @Override
-    public String toString(){
-        return "ClientePremium(" + "nombre=" + nombre + "apellido=" + apellido + "Id=" + id;
     }
     
     public void imprimirNoCuentasRegistradas(){

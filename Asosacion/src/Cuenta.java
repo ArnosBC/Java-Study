@@ -31,7 +31,7 @@ public class Cuenta {
         this.limite = limite;
         this.fechaApertura = fechaApertura;
     }
-
+ 
     public double getSaldo() {
         return saldo;
     }
